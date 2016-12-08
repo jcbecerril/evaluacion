@@ -1,0 +1,270 @@
+/*!
+ * Start Bootstrap - Simple Sidebar (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+ body {
+  overflow-x: hidden;
+  padding-top: 70px;
+ }
+
+/* Toggle Styles */
+
+#wrapper {
+  padding-left: 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+  padding-left: 250px;
+}
+
+#sidebar-wrapper {
+  z-index: 1000;
+  position: fixed;
+  left: 250px;
+  width: 0;
+  height: 100%;
+  margin-left: -250px;
+  margin-top: -70px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #2C2C2C;
+  -webkit-transitin: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper{
+  width: 250px;
+}
+
+#page-content-wrapper {
+  width: 100%;
+  position: absolute;
+  padding: 15px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+  position: absolute;
+  margin-right: -250px;
+}
+
+.navbar-toggle {
+  float: left;
+  margin-left: 10px;
+  border: none;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar-nav li {
+  text-indent: 20px;
+  line-height: 40px;
+}
+
+.sidebar-nav li a {
+  display: block;
+  text-decoration: none;
+  color: #999999;
+}
+
+.sidebar-nav li a:hover {
+  text-decoration: none;
+  color: #fff;
+  background: rgba(255,255,255,0.2);
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+  text-decoration: none;
+}
+
+.sidebar-nav > .sidebar-brand {
+  height: 65px;
+  font-size: 24px;
+  line-height: 60px;
+  text-indent: -20px;
+  text-align: center;
+  color: white;
+  letter-spacing: 4px;
+}
+
+.sidebar-nav > .sidebar-brand a {
+  color: #999999;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+  color: #fff;
+  background: none;
+}
+
+.navbar-lef {
+  margin-left: 250px;
+}
+
+.navbar {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+@media(min-width:768px) {
+  #wrapper {
+      padding-left: 250px;
+  }
+
+  #wrapper.toggled {
+      padding-left: 0;
+  }
+
+  #sidebar-wrapper {
+      width: 250px;
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+      width: 0;
+  }
+
+  #page-content-wrapper {
+      padding: 20px;
+      position: relative;
+  }
+
+  #wrapper.toggled #page-content-wrapper {
+      position: relative;
+      margin-right: 0;
+  }
+
+  #wrapper.toggled .navbar {
+    margin-left: 0;
+  }
+
+  .navbar {
+    margin-left: 250px;
+  }
+
+  .footer {
+    padding-right: 250px;
+  }
+}
+
+.navbar-toggle {
+  margin-right: 5px;
+  border: none;
+  background: transparent !important;
+}
+.navbar-toggle:hover {
+  background: transparent !important;
+}
+.navbar-toggle .icon-bar {
+  width: 22px;
+  transition: all 0.2s;
+}
+.navbar-toggle .top-bar {
+  transform: rotate(45deg);
+  transform-origin: 10% 10%;
+}
+.navbar-toggle .middle-bar {
+  opacity: 0;
+}
+.navbar-toggle .bottom-bar {
+  transform: rotate(-45deg);
+  transform-origin: 10% 90%;
+}
+.navbar-toggle.collapsed .top-bar {
+  transform: rotate(0);
+}
+.navbar-toggle.collapsed .middle-bar {
+  opacity: 1;
+}
+.navbar-toggle.collapsed .bottom-bar {
+  transform: rotate(0);
+}
+
+.navbar-inverse {
+  background-color: rgb(117,40,68);
+  border-color: transparent;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  color: white;
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:focus, .navbar-inverse .navbar-nav > .open > a:hover {
+    background-color: rgba(44,44,44,0.2);
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: rgba(117,40,68,0.5);
+}
+
+@media(max-width: 767px) {
+  .navbar-inverse .navbar-nav .open .dropdown-menu .divider {
+    background-color: rgba(255,255,255,0.1);
+  }
+
+  .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
+    color: #c3c3c3;
+  }
+}
+
+.sidebar-nav > .logo_esca {
+  padding: 0 0 20px 0;
+  text-indent: -20px;
+  text-align: center;
+}
+
+.sidebar-nav > .rol {
+  text-indent: -20px;
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.navbar-brand {
+  padding: 5px 10px 0 10px;
+}
+
+.sidebar-nav li i {
+  text-indent: 0;
+}
+
+.export {
+  color: #337ab7;
+}
+
+.dt-buttons {
+  margin-bottom: 15px;
+}
+
+.thumbnail:hover {
+  -webkit-box-shadow: 7px 7px 11px 0px rgba(50, 50, 50, 0.27);
+  -moz-box-shadow: 7px 7px 11px 0px rgba(50, 50, 50, 0.27);
+  box-shadow: 7px 7px 11px 0px rgba(50, 50, 50, 0.27);
+  transition: .3s;
+}
+
+.thumbnail {
+  transition: .3s;
+}
+
+.text-middle {
+  vertical-align: middle !important;
+}
