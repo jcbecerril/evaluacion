@@ -5,6 +5,7 @@
 	use Models\Evaluacion as Evaluacion;
 	use Models\Grupo as Grupo;
 	use Models\Supervisor as Supervisor;
+	use Models\SendEmail as SendEmail;
 
 	$evaluaciones = new evaluacionesController();
 
@@ -14,6 +15,7 @@
 			$this->evaluaciones = new Evaluacion();
 			$this->grupos = new Grupo();
 			$this->supervisores = new Supervisor();
+			$this->sendemails = new SendEmail();
 
 			$this->custom = new customController();
 		}
@@ -356,6 +358,17 @@
 			return $this->operacion($datos);
 		}
 
+		public function find($id, $s){
+			$this->sendemails->set('grupo_idGrupo', $id);
+			$this->sendemails->set('semana', $s);
+			$datos = $this->sendemails->find();
+			if ($datos['_existe'] == 1) {
+				return 1;
+			}else {
+				return 0;
+			}
+		}
+
 		public function viewGrupo($id){
 			$grupos = new gruposController();
 			$this->grupos->set("idGrupo", $this->custom->sanitizeTexto($id));
@@ -654,6 +667,9 @@
 			if(!$mailer->Send()) {
 			  $this->custom->send_error('send_error');
 			}else {
+				$this->sendemails->set("grupo_idGrupo", $datos['Grupo_idGrupo']);
+				$this->sendemails->set("semana", $datos['semana']);
+				$this->sendemails->add();
 			  $this->custom->message('send_success');
 			}
 		}
